@@ -26,7 +26,7 @@ class PublicPanelProvider extends PanelProvider
             ->id('public')
             ->path('')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Gray,
             ])
             ->viteTheme('resources/css/filament/public/theme.css')
             ->discoverResources(in: app_path('Filament/Public/Resources'), for: 'App\\Filament\\Public\\Resources')
