@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\App\Pages\Auth\Login;
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -32,7 +33,7 @@ class AppPanelProvider extends PanelProvider
                 'primary' => Color::Green,
             ])
             ->viteTheme('resources/css/filament/public/theme.css')
-            ->defaultThemeMode(config('themes.theme_mode', 'light'))
+            ->defaultThemeMode(config('filakit.theme_mode', ThemeMode::Dark))
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')
             ->pages([

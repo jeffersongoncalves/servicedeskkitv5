@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -27,7 +28,7 @@ class PublicPanelProvider extends PanelProvider
                 'primary' => Color::Gray,
             ])
             ->viteTheme('resources/css/filament/public/theme.css')
-            ->defaultThemeMode(config('themes.theme_mode'))
+            ->defaultThemeMode(config('filakit.theme_mode', ThemeMode::Dark))
             ->discoverResources(in: app_path('Filament/Public/Resources'), for: 'App\\Filament\\Public\\Resources')
             ->discoverPages(in: app_path('Filament/Public/Pages'), for: 'App\\Filament\\Public\\Pages')
             ->pages([
