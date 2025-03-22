@@ -2,9 +2,6 @@ includes:
     - vendor/larastan/larastan/extension.neon
 
 parameters:
-    ignoreErrors:
-        -
-            identifier: return.unusedType
     level: 5
     paths:
         - app
