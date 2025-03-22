@@ -62,9 +62,12 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+            ->navigationGroups([
+                __('User'),
+                __('Management'),
+            ])
             ->unsavedChangesAlerts()
             ->passwordReset()
-            ->emailVerification()
             ->profile()
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');

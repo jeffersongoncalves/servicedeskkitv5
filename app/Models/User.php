@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\StatusEnum;
+use App\Observers\UserObserver;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Auth\Authenticatable;
@@ -12,6 +12,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
@@ -19,7 +20,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
- * @property StatusEnum $status
+ * @property bool $status
  * @property string $name
  * @property string $email
  * @property \Illuminate\Support\Carbon|null $email_verified_at
@@ -46,6 +47,7 @@ use Illuminate\Notifications\Notifiable;
  *
  * @mixin \Eloquent
  */
+#[ObservedBy(UserObserver::class)]
 class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, MustVerifyEmailContract
 {
     use Authenticatable;
@@ -79,12 +81,17 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return true;
     }
 
+    public function canImpersonate(): bool
+    {
+        return false;
+    }
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'status' => StatusEnum::class,
+            'status' => 'boolean',
         ];
     }
 }

@@ -1,0 +1,13 @@
+{
+    "Management": "Gestão",
+    "User": "Usuário",
+    "Users": "Usuários",
+    "Admin": "Administrador",
+    "Admins": "Administradores",
+    "Id": "Identificação",
+    "Name": "Nome",
+    "Email": "Email",
+    "Password": "Senha",
+    "Created at": "Criado em",
+    "Updated at": "Atualizado em"
+}

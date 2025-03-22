@@ -63,7 +63,6 @@ class AppPanelProvider extends PanelProvider
             ])
             ->unsavedChangesAlerts()
             ->passwordReset()
-            ->emailVerification()
             ->profile()
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s');
