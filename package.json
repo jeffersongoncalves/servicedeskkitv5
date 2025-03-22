@@ -1,4 +1,5 @@
 {
+    "name" : "jeffersongoncalves/filakit",
     "private": true,
     "type": "module",
     "scripts": {
