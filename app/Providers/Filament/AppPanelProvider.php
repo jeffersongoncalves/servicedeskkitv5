@@ -34,7 +34,7 @@ class AppPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Green,
             ])
-            ->brandLogo(fn () => Vite::asset('resources/images/logo-filakit.png'))
+            ->brandLogo(fn () => Vite::asset(config('filakit.favicon.logo')))
             ->brandLogoHeight(fn () => request()->is('admin/login', 'admin/password-reset/*') ? '121px' : '50px')
             ->viteTheme('resources/css/filament/public/theme.css')
             ->defaultThemeMode(config('filakit.theme_mode', ThemeMode::Dark))
