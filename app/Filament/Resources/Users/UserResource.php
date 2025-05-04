@@ -16,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Cache;
+
 use function __;
 
 class UserResource extends Resource
@@ -62,7 +63,6 @@ class UserResource extends Resource
     {
         return (string) Cache::rememberForever('users_count', fn () => User::query()->count());
     }
-
 
     public static function form(Schema $schema): Schema
     {

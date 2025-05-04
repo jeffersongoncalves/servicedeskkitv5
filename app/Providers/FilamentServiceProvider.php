@@ -100,7 +100,7 @@ class FilamentServiceProvider extends ServiceProvider
         Forms\Components\Select::configureUsing(function (Forms\Components\Select $component) {
             return $component->native(false)
                 ->selectablePlaceholder(function (Forms\Components\Select $component) {
-                    return !$component->isRequired();
+                    return ! $component->isRequired();
                 })
                 ->searchable(function (Forms\Components\Select $component) {
                     return $component->hasRelationship();
