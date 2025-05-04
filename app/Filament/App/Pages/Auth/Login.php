@@ -2,7 +2,7 @@
 
 namespace App\Filament\App\Pages\Auth;
 
-class Login extends \Filament\Pages\Auth\Login
+class Login extends \Filament\Auth\Pages\Login
 {
     protected function getCredentialsFromFormData(array $data): array
     {

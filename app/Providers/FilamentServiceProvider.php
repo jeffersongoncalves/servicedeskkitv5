@@ -7,7 +7,8 @@ use Filament\Forms;
 use Filament\Infolists;
 use Filament\Notifications;
 use Filament\Pages;
-use Filament\Support\Enums\MaxWidth;
+use Filament\Schemas\Schema;
+use Filament\Support\Enums\Width;
 use Filament\Tables;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
@@ -25,6 +26,7 @@ class FilamentServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureActions();
+        $this->configureSchema();
         $this->configureForms();
         $this->configureInfolists();
         $this->configurePages();
@@ -39,12 +41,8 @@ class FilamentServiceProvider extends ServiceProvider
 
         Actions\Action::configureUsing(function (Actions\Action $action) {
             return $action->translateLabel()
-                ->modalWidth(MaxWidth::Medium)
+                ->modalWidth(Width::Medium)
                 ->closeModalByClickingAway(false);
-        });
-
-        Actions\StaticAction::configureUsing(function (Actions\StaticAction $staticAction) {
-            return $staticAction->translateLabel();
         });
 
         Actions\CreateAction::configureUsing(function (Actions\CreateAction $action) {
@@ -53,11 +51,30 @@ class FilamentServiceProvider extends ServiceProvider
         });
 
         Actions\EditAction::configureUsing(function (Actions\EditAction $action) {
-            return $action->icon('heroicon-o-pencil');
+            return $action->icon('heroicon-o-pencil')
+                ->hiddenLabel()
+                ->button();
         });
 
         Actions\DeleteAction::configureUsing(function (Actions\DeleteAction $action) {
-            return $action->icon('heroicon-o-trash');
+            return $action->icon('heroicon-o-trash')
+                ->hiddenLabel()
+                ->button();
+        });
+
+        Actions\ViewAction::configureUsing(function (Actions\ViewAction $action) {
+            return $action->hiddenLabel()
+                ->button();
+        });
+    }
+
+    private function configureSchema(): void
+    {
+        Schema::configureUsing(function (Schema $schema) {
+            $schema
+                ->defaultTimeDisplayFormat($this->defaultDateDisplayFormat)
+                ->defaultDateDisplayFormat($this->defaultDateTimeDisplayFormat)
+                ->defaultDateTimeDisplayFormat($this->defaultCurrency);
         });
     }
 
@@ -65,11 +82,6 @@ class FilamentServiceProvider extends ServiceProvider
     {
         Forms\Components\Field::configureUsing(function (Forms\Components\Field $field) {
             return $field->translateLabel();
-        });
-
-        Forms\Components\Actions\Action::configureUsing(function (Forms\Components\Actions\Action $action) {
-            return $action->modalWidth(MaxWidth::Medium)
-                ->closeModalByClickingAway(false);
         });
 
         Forms\Components\ToggleButtons::configureUsing(function (Forms\Components\ToggleButtons $component) {
@@ -88,7 +100,7 @@ class FilamentServiceProvider extends ServiceProvider
         Forms\Components\Select::configureUsing(function (Forms\Components\Select $component) {
             return $component->native(false)
                 ->selectablePlaceholder(function (Forms\Components\Select $component) {
-                    return ! $component->isRequired();
+                    return !$component->isRequired();
                 })
                 ->searchable(function (Forms\Components\Select $component) {
                     return $component->hasRelationship();
@@ -104,13 +116,13 @@ class FilamentServiceProvider extends ServiceProvider
         });
 
         Forms\Components\Repeater::configureUsing(function (Forms\Components\Repeater $component) {
-            return $component->deleteAction(function (Forms\Components\Actions\Action $action) {
+            return $component->deleteAction(function (Actions\Action $action) {
                 return $action->requiresConfirmation();
             });
         });
 
         Forms\Components\Builder::configureUsing(function (Forms\Components\Builder $component) {
-            return $component->deleteAction(function (Forms\Components\Actions\Action $action) {
+            return $component->deleteAction(function (Actions\Action $action) {
                 return $action->requiresConfirmation();
             });
         });
@@ -130,19 +142,8 @@ class FilamentServiceProvider extends ServiceProvider
 
     private function configureInfolists(): void
     {
-        Infolists\Infolist::$defaultDateDisplayFormat = $this->defaultDateDisplayFormat;
-
-        Infolists\Infolist::$defaultDateTimeDisplayFormat = $this->defaultDateTimeDisplayFormat;
-
-        Infolists\Infolist::$defaultCurrency = $this->defaultCurrency;
-
         Infolists\Components\Entry::configureUsing(function (Infolists\Components\Entry $entry) {
             return $entry->translateLabel();
-        });
-
-        Infolists\Components\Actions\Action::configureUsing(function (Infolists\Components\Actions\Action $action) {
-            return $action->modalWidth(MaxWidth::Medium)
-                ->closeModalByClickingAway(false);
         });
     }
 
@@ -159,12 +160,6 @@ class FilamentServiceProvider extends ServiceProvider
 
     private function configureTables(): void
     {
-        Tables\Table::$defaultDateDisplayFormat = $this->defaultDateDisplayFormat;
-
-        Tables\Table::$defaultDateTimeDisplayFormat = $this->defaultDateTimeDisplayFormat;
-
-        Tables\Table::$defaultCurrency = $this->defaultCurrency;
-
         Tables\Columns\Column::configureUsing(function (Tables\Columns\Column $column) {
             return $column->translateLabel();
         });
@@ -183,36 +178,13 @@ class FilamentServiceProvider extends ServiceProvider
                 ->wrap();
         });
 
-        Tables\Actions\Action::configureUsing(function (Tables\Actions\Action $action) {
-            return $action->modalWidth(MaxWidth::Medium)
-                ->closeModalByClickingAway(false);
-        });
-
-        Tables\Actions\CreateAction::configureUsing(function (Tables\Actions\CreateAction $action) {
-            return $action->createAnother(false);
-        });
-
-        Tables\Actions\ViewAction::configureUsing(function (Tables\Actions\ViewAction $action) {
-            return $action->hiddenLabel()
-                ->button();
-        });
-
-        Tables\Actions\EditAction::configureUsing(function (Tables\Actions\EditAction $action) {
-            return $action->hiddenLabel()
-                ->button();
-        });
-
-        Tables\Actions\DeleteAction::configureUsing(function (Tables\Actions\DeleteAction $action) {
-            return $action->hiddenLabel()
-                ->button();
-        });
-
         Tables\Filters\SelectFilter::configureUsing(function (Tables\Filters\SelectFilter $filter) {
             return $filter->native(false);
         });
 
-        FilamentImpersonate\Tables\Actions\Impersonate::configureUsing(function (FilamentImpersonate\Tables\Actions\Impersonate $action) {
-            return $action->button();
+        FilamentImpersonate\Actions\Impersonate::configureUsing(function (FilamentImpersonate\Actions\Impersonate $action) {
+            return $action->button()
+                ->hiddenLabel();
         });
     }
 }

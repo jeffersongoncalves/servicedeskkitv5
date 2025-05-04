@@ -4,21 +4,20 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
+use BackedEnum;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Infolists;
-use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Cache;
-use STS\FilamentImpersonate\Tables\Actions\Impersonate;
+use STS\FilamentImpersonate\Actions\Impersonate;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-user';
 
     protected static bool $isGloballySearchable = true;
 
@@ -59,11 +58,11 @@ class UserResource extends Resource
         return (string) Cache::rememberForever('users_count', fn () => User::query()->count());
     }
 
-    public static function form(Form $form): Form
+    public static function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\Section::make()
+        return $schema
+            ->components([
+                \Filament\Schemas\Components\Section::make()
                     ->columns()
                     ->schema([
                         Forms\Components\Toggle::make('status')
@@ -87,11 +86,11 @@ class UserResource extends Resource
             ]);
     }
 
-    public static function infolist(Infolist $infolist): Infolist
+    public static function infolist(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
-        return $infolist
-            ->schema([
-                Infolists\Components\Section::make()
+        return $schema
+            ->components([
+                \Filament\Schemas\Components\Section::make()
                     ->columns()
                     ->schema([
                         Infolists\Components\TextEntry::make('id'),
@@ -103,7 +102,7 @@ class UserResource extends Resource
                             ->copyMessage('Email copiado com sucesso!')
                             ->copyMessageDuration(1500),
                     ]),
-                Infolists\Components\Section::make('INFORMAÇÕES ADICIONAIS')
+                \Filament\Schemas\Components\Section::make('INFORMAÇÕES ADICIONAIS')
                     ->description('Informações da data de cadastro/alteração e referência.')
                     ->columns()
                     ->schema([
@@ -146,10 +145,11 @@ class UserResource extends Resource
             ->actions([
                 Impersonate::make('impersonate')
                     ->guard('web')
+                    ->backTo(route('filament.admin.pages.dashboard'))
                     ->redirectTo(route('filament.app.pages.dashboard')),
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                \Filament\Actions\ViewAction::make(),
+                \Filament\Actions\EditAction::make(),
+                \Filament\Actions\DeleteAction::make(),
             ]);
     }
 

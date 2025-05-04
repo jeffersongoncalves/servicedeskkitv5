@@ -58,6 +58,9 @@ class PublicPanelProvider extends PanelProvider
                         'staging' => Color::Orange,
                         default => Color::Blue,
                     })
+                    ->showBadge()
+                    ->showBorder()
+                    ->showGitBranch()
                     ->visible(fn () => config('filakit.show_environment_indicator', false)),
             ])
             ->topNavigation()
