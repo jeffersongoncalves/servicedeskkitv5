@@ -10,9 +10,12 @@ use Filament\Forms;
 use Filament\Infolists;
 use Filament\Notifications;
 use Filament\Pages;
+use Filament\Resources;
 use Filament\Schemas\Schema;
 use Filament\Support\Enums\Width;
+use Filament\Support\Facades\FilamentIcon;
 use Filament\Support\Facades\FilamentView;
+use Filament\Support\Icons\Heroicon;
 use Filament\Tables;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\View\View;
@@ -65,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
     private function configureActions(): void
     {
         Actions\ActionGroup::configureUsing(function (Actions\ActionGroup $action) {
-            return $action->icon('heroicon-o-ellipsis-horizontal');
+            return $action->icon(Heroicon::EllipsisVertical);
         });
 
         Actions\Action::configureUsing(function (Actions\Action $action) {
@@ -77,26 +80,28 @@ class AppServiceProvider extends ServiceProvider
 
         Actions\CreateAction::configureUsing(function (Actions\CreateAction $action) {
             return $action
-                ->icon('heroicon-o-plus')
+                ->icon(Heroicon::Plus)
+                ->hiddenLabel()
                 ->createAnother(false);
         });
 
         Actions\EditAction::configureUsing(function (Actions\EditAction $action) {
             return $action
-                ->icon('heroicon-o-pencil')
+                ->icon(Heroicon::PencilSquare)
                 ->hiddenLabel()
                 ->button();
         });
 
         Actions\DeleteAction::configureUsing(function (Actions\DeleteAction $action) {
             return $action
-                ->icon('heroicon-o-trash')
+                ->icon(Heroicon::Trash)
                 ->hiddenLabel()
                 ->button();
         });
 
         Actions\ViewAction::configureUsing(function (Actions\ViewAction $action) {
             return $action
+                ->icon(Heroicon::Eye)
                 ->hiddenLabel()
                 ->button();
         });
