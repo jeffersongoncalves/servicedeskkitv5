@@ -43,10 +43,6 @@ class UsersTable
                 //
             ])
             ->actions([
-                Impersonate::make('impersonate')
-                    ->guard('web')
-                    ->backTo(route('filament.admin.pages.dashboard'))
-                    ->redirectTo(route('filament.app.pages.dashboard')),
                 ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),

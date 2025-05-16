@@ -4,14 +4,13 @@ use Filament\Enums\ThemeMode;
 
 return [
     'theme_mode' => ThemeMode::Light,
-    'show_environment_indicator' => true,
-    'public_panel_enabled' => true,
+    'guest_panel_enabled' => true,
     'admin_panel_enabled' => true,
     'app_panel_enabled' => true,
     'favicon' => [
         'enabled' => true,
         'manifest' => [
-            'name' => 'FilaKit',
+            'name' => env('APP_NAME', 'Filakit'),
             'icons' => [
                 '36' => '0.75',
                 '48' => '1.0',

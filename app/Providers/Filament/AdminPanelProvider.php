@@ -3,7 +3,6 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
-use App\Http\Middleware\ProtectFromImpersonation;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -21,7 +20,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use pxlrbt\FilamentEnvironmentIndicator\EnvironmentIndicatorPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -60,7 +58,6 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                ProtectFromImpersonation::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
@@ -70,11 +67,7 @@ class AdminPanelProvider extends PanelProvider
                 __('Management'),
             ])
             ->plugins([
-                EnvironmentIndicatorPlugin::make()
-                    ->showBadge()
-                    ->showBorder()
-                    ->showGitBranch()
-                    ->visible(fn () => config('filakit.show_environment_indicator', false)),
+                //
             ])
             ->unsavedChangesAlerts()
             ->passwordReset()

@@ -16,9 +16,7 @@
         "filament/filament": "4.0.0-alpha6",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "livewire/livewire": "^3.6",
-        "pxlrbt/filament-environment-indicator": "4.x-dev",
-        "stechstudio/filament-impersonate": "4.x-dev"
+        "livewire/livewire": "^3.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",

@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\Filament\AppPanelProvider;
-use App\Providers\Filament\PublicPanelProvider;
+use App\Providers\Filament\GuestPanelProvider;
 use Filament\Actions;
 use Filament\Forms;
 use Filament\Infolists;
@@ -18,7 +18,6 @@ use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
-use STS\FilamentImpersonate;
 
 use function view;
 
@@ -41,8 +40,8 @@ class AppServiceProvider extends ServiceProvider
         if (config('filakit.app_panel_enabled', false)) {
             $this->app->register(AppPanelProvider::class);
         }
-        if (config('filakit.public_panel_enabled', false)) {
-            $this->app->register(PublicPanelProvider::class);
+        if (config('filakit.guest_panel_enabled', false)) {
+            $this->app->register(GuestPanelProvider::class);
         }
         if (config('filakit.favicon.enabled')) {
             FilamentView::registerRenderHook(PanelsRenderHook::HEAD_START, fn (): View => view('components.favicon'));
@@ -100,12 +99,6 @@ class AppServiceProvider extends ServiceProvider
             return $action
                 ->hiddenLabel()
                 ->button();
-        });
-
-        FilamentImpersonate\Actions\Impersonate::configureUsing(function (FilamentImpersonate\Actions\Impersonate $action) {
-            return $action
-                ->button()
-                ->hiddenLabel();
         });
     }
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9374e9a8b686b753630d9ef927c5578",
+    "content-hash": "ba441d47d8261bba2688255c5e2a8012",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2036,73 +2036,6 @@
                 "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/4.2.3"
             },
             "time": "2025-04-01T14:41:56+00:00"
-        },
-        {
-            "name": "lab404/laravel-impersonate",
-            "version": "1.7.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/404labfr/laravel-impersonate.git",
-                "reference": "5033f3433a55ca8bb2cc3e4a018a39dd8a327a9f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/404labfr/laravel-impersonate/zipball/5033f3433a55ca8bb2cc3e4a018a39dd8a327a9f",
-                "reference": "5033f3433a55ca8bb2cc3e4a018a39dd8a327a9f",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^6.0 | ^7.0 | ^8.0 | ^9.0 | ^10.0 | ^11.0 | ^12.0",
-                "php": "^7.2 | ^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3.3",
-                "orchestra/testbench": "^4.0 | ^5.0 | ^6.0 | ^7.0 | ^8.0 | ^9.0 | ^10.0",
-                "phpunit/phpunit": "^7.5 | ^8.0 | ^9.0 | ^10.0 | ^11.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lab404\\Impersonate\\ImpersonateServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Lab404\\Impersonate\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marceau Casals",
-                    "email": "marceau@casals.fr"
-                }
-            ],
-            "description": "Laravel Impersonate is a plugin that allows to you to authenticate as your users.",
-            "keywords": [
-                "auth",
-                "impersonate",
-                "impersonation",
-                "laravel",
-                "laravel-package",
-                "laravel-plugin",
-                "package",
-                "plugin",
-                "user"
-            ],
-            "support": {
-                "issues": "https://github.com/404labfr/laravel-impersonate/issues",
-                "source": "https://github.com/404labfr/laravel-impersonate/tree/1.7.7"
-            },
-            "time": "2025-02-24T16:18:38+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4843,71 +4776,6 @@
             "time": "2025-03-16T03:05:19+00:00"
         },
         {
-            "name": "pxlrbt/filament-environment-indicator",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeffersongoncalves/filament-environment-indicator-by-pxlrbt.git",
-                "reference": "a3aea5bc55fb67acebe97bdebb9cc1c01a996e28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-environment-indicator-by-pxlrbt/zipball/a3aea5bc55fb67acebe97bdebb9cc1c01a996e28",
-                "reference": "a3aea5bc55fb67acebe97bdebb9cc1c01a996e28",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "4.0.0-alpha6",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.10"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "\\pxlrbt\\FilamentEnvironmentIndicator\\FilamentEnvironmentIndicatorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "pxlrbt\\FilamentEnvironmentIndicator\\": "src/"
-                }
-            },
-            "scripts": {
-                "pint": [
-                    "vendor/bin/pint"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dennis Koch",
-                    "email": "info@pixelarbeit.de"
-                }
-            ],
-            "description": "Indicator for the current environment inside Filament",
-            "keywords": [
-                "environment indicator",
-                "filament",
-                "laravel-filament"
-            ],
-            "support": {
-                "source": "https://github.com/jeffersongoncalves/filament-environment-indicator-by-pxlrbt/tree/4.x"
-            },
-            "funding": [
-                {
-                    "type": "github",
-                    "url": "https://github.com/pxlrbt"
-                }
-            ],
-            "time": "2025-05-04T21:40:58+00:00"
-        },
-        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -5459,46 +5327,6 @@
                 }
             ],
             "time": "2025-02-21T14:16:57+00:00"
-        },
-        {
-            "name": "stechstudio/filament-impersonate",
-            "version": "4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jeffersongoncalves/filament-impersonate-by-stechstudio.git",
-                "reference": "3a9624a23717f1c1928318d240ac16e7a02dfade"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-impersonate-by-stechstudio/zipball/3a9624a23717f1c1928318d240ac16e7a02dfade",
-                "reference": "3a9624a23717f1c1928318d240ac16e7a02dfade",
-                "shasum": ""
-            },
-            "require": {
-                "filament/filament": "4.0.0-alpha6",
-                "lab404/laravel-impersonate": "^1.7"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "STS\\FilamentImpersonate\\FilamentImpersonateServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "STS\\FilamentImpersonate\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "A Filament package to impersonate your users.",
-            "support": {
-                "source": "https://github.com/jeffersongoncalves/filament-impersonate-by-stechstudio/tree/4.x"
-            },
-            "time": "2025-05-04T22:19:15+00:00"
         },
         {
             "name": "symfony/clock",
@@ -12001,10 +11829,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "pxlrbt/filament-environment-indicator": 20,
-        "stechstudio/filament-impersonate": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
