@@ -34,6 +34,26 @@ Clone the repository
 laravel new my-app --using=jeffersongoncalves/filakitv4 --database=mysql
 ```
 
+###  Easy Installation
+
+FilaKit can be easily installed using the following command:
+
+```bash
+php install.php
+```
+
+This command automates the installation process by:
+- Installing Composer dependencies
+- Setting up the environment file
+- Generating application key
+- Setting up the database
+- Running migrations
+- Installing Node.js dependencies
+- Building assets
+- Configuring Herd (if used)
+
+### Manual Installation
+
 Install JavaScript dependencies
 ``` bash
 pnpm install
