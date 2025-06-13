@@ -16,7 +16,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "filament/filament": "v4.0.0-beta1",
+        "filament/filament": "v4.0.0-beta2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6"
@@ -109,15 +109,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jeffersongoncalves/filament-environment-indicator-by-pxlrbt.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/jeffersongoncalves/filament-impersonate-by-stechstudio.git"
-        }
-    ]
+    "prefer-stable": true
 }
