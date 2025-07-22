@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## v4.0.0-beta19 - 2025-07-22
+
+### What's Changed
+
+* build(deps): bump form-data from 4.0.3 to 4.0.4 in the npm_and_yarn group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/33
+* build(deps): bump aglipanci/laravel-pint-action from 2.5 to 2.6 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/34
+* build(deps): bump the actions-deps group with 3 updates by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/35
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filakitv4/compare/v4.0.0-beta18...v4.0.0-beta19
+
 ## v4.0.0-beta18 - 2025-07-21
 
 ### What's Changed
