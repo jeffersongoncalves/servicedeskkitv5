@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.0-beta20 - 2025-07-30
+
+### What's Changed
+
+* build(deps-dev): bump axios from 1.10.0 to 1.11.0 in the npm_and_yarn group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/36
+* build(deps-dev): bump vite from 7.0.5 to 7.0.6 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/37
+* build(deps): bump filament/filament from 4.0.0-beta19 to 4.0.0-beta20 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/38
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filakitv4/compare/v4.0.0-beta19...4.0.0-beta20
+
 ## v4.0.0-beta19 - 2025-07-22
 
 ### What's Changed
