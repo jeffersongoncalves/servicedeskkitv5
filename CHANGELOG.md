@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.1 - 2025-08-15
+
+### What's Changed
+
+* build(deps): bump actions/checkout from 4 to 5 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/40
+* feat: add force https, aggressive preftching and auto earger load by @andrefelipe18 in https://github.com/jeffersongoncalves/filakitv4/pull/41
+
+### New Contributors
+
+* @andrefelipe18 made their first contribution in https://github.com/jeffersongoncalves/filakitv4/pull/41
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filakitv4/compare/4.0.0...4.0.1
+
 ## 4.0.0-beta25 - 2025-08-11
 
 **Full Changelog**: https://github.com/jeffersongoncalves/filakitv4/compare/4.0.0-beta24...4.0.0-beta25
