@@ -1,0 +1,21 @@
+{
+    "Management": "Management",
+    "User": "User",
+    "Users": "Users",
+    "Admin": "Admin",
+    "Admins": "Admins",
+    "Id": "Id",
+    "Name": "Name",
+    "Email": "Email",
+    "Password": "Password",
+    "Created at": "Created at",
+    "Updated at": "Updated at",
+    "ADDITIONAL INFORMATION": "ADDITIONAL INFORMATION",
+    "Information on the date of registration and date of modification.": "Information on the date of registration and date of modification.",
+    "Settings": "Settings",
+    "My Profile": "My Profile",
+    "Group Profile": "Group Profile",
+    "🇧🇷 Portuguese": "🇧🇷 Portuguese",
+    "🇺🇸 English": "🇺🇸 English",
+    "🇪🇸 Spanish": "🇪🇸 Spanish"
+}

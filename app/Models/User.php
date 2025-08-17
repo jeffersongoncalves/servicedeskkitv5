@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Observers\UserObserver;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\MustVerifyEmail;
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @property int $id
@@ -26,6 +28,10 @@ use Illuminate\Notifications\Notifiable;
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $remember_token
+ * @property string|null $avatar_url
+ * @property array<array-key, mixed>|null $custom_fields
+ * @property string|null $locale
+ * @property string|null $theme_color
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
@@ -35,20 +41,24 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereAvatarUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereCustomFields($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereLocale($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereThemeColor($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
  *
  * @mixin \Eloquent
  */
 #[ObservedBy(UserObserver::class)]
-class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, MustVerifyEmailContract
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract, FilamentUser, HasAvatar, MustVerifyEmailContract
 {
     use Authenticatable;
     use Authorizable;
@@ -62,6 +72,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'name',
         'email',
         'password',
+        'avatar_url',
+        'custom_fields',
+        'locale',
+        'theme_color',
     ];
 
     protected $hidden = [
@@ -86,12 +100,20 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return false;
     }
 
+    public function getFilamentAvatarUrl(): ?string
+    {
+        $avatarColumn = config('filament-edit-profile.avatar_column', 'avatar_url');
+
+        return $this->$avatarColumn ? Storage::url($this->$avatarColumn) : null;
+    }
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'status' => 'boolean',
+            'custom_fields' => 'array',
         ];
     }
 }

@@ -19,6 +19,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string(config('filament-edit-profile.avatar_column', 'avatar_url'))->nullable();
+            $table->json('custom_fields')->nullable();
+            $table->string(config('filament-edit-profile.locale_column', 'locale'))->nullable();
+            $table->string(config('filament-edit-profile.theme_color_column', 'theme_color'))->nullable();
             $table->timestamps();
         });
 
