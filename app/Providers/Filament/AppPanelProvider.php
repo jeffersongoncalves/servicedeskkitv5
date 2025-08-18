@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\App\Pages\Auth\Login;
+use Filament\Actions\Action;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -21,6 +22,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
+use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
 
 class AppPanelProvider extends PanelProvider
 {
@@ -82,6 +84,12 @@ class AppPanelProvider extends PanelProvider
                     ->shouldShowMultiFactorAuthentication()
                     ->shouldShowBrowserSessionsForm()
                     ->shouldShowAvatarForm(),
+            ])
+            ->userMenuItems([
+                'profile' => Action::make('profile')
+                    ->label(fn() => auth('admin')->user()->name)
+                    ->url(fn (): string => EditProfilePage::getUrl())
+                    ->icon('heroicon-m-user-circle'),
             ])
             ->unsavedChangesAlerts()
             ->passwordReset()
