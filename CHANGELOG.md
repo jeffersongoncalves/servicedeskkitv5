@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.8 - 2025-09-08
+
+### What's Changed
+
+* build(deps): bump joaopaulolndev/filament-edit-profile from 2.0.11 to 2.0.12 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/52
+* build(deps): bump filament/filament from 4.0.7 to 4.0.8 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv4/pull/53
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filakitv4/compare/4.0.7...4.0.8
+
 ## 4.0.7 - 2025-09-04
 
 ### What's Changed
