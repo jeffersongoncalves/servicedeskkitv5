@@ -2,7 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use AchyutN\FilamentLogViewer\FilamentLogViewer;
 use App\Filament\Admin\Pages\Auth\Login;
 use Filament\Actions\Action;
 use Filament\Enums\ThemeMode;
@@ -22,8 +21,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
-use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -73,33 +70,7 @@ class AdminPanelProvider extends PanelProvider
                 __('Settings'),
             ])
             ->plugins([
-                FilamentLogViewer::make()
-                    ->navigationGroup(__('Settings')),
-                FilamentEditProfilePlugin::make()
-                    ->slug('my-profile')
-                    ->setTitle(__('My Profile'))
-                    ->setNavigationLabel(__('My Profile'))
-                    ->setNavigationGroup(__('Group Profile'))
-                    ->setIcon('heroicon-o-user')
-                    ->setSort(10)
-                    ->shouldRegisterNavigation(false)
-                    ->shouldShowEmailForm()
-                    ->shouldShowLocaleForm(options: [
-                        'pt_BR' => __('🇧🇷 Português'),
-                        'en' => __('🇺🇸 Inglês'),
-                        'es' => __('🇪🇸 Espanhol'),
-                    ])
-                    ->shouldShowThemeColorForm()
-                    ->shouldShowSanctumTokens()
-                    ->shouldShowMultiFactorAuthentication()
-                    ->shouldShowBrowserSessionsForm()
-                    ->shouldShowAvatarForm(),
-            ])
-            ->userMenuItems([
-                'profile' => Action::make('profile')
-                    ->label(fn (): string => __('My Profile'))
-                    ->url(fn (): string => EditProfilePage::getUrl())
-                    ->icon('heroicon-m-user-circle'),
+                //
             ])
             ->unsavedChangesAlerts()
             ->passwordReset()

@@ -1,20 +1,20 @@
 <div class="filament-hidden">
 
-![FilaKit](https://raw.githubusercontent.com/jeffersongoncalves/filakitv4/4.x/art/jeffersongoncalves-filakitv4.png)
+![FilaKit](https://raw.githubusercontent.com/jeffersongoncalves/filakitv5/5.x/art/jeffersongoncalves-filakitv5.png)
 
 </div>
 
-# FilaKit Start Kit Filament 4.x and Laravel 12.x
+# FilaKit Start Kit Filament 5.x and Laravel 12.x
 
 ## About FilaKit
 
-FilaKit is a robust starter kit built on Laravel 12.x and Filament 4.x, designed to accelerate the development of modern
+FilaKit is a robust starter kit built on Laravel 12.x and Filament 5.x, designed to accelerate the development of modern
 web applications with a ready-to-use multi-panel structure.
 
 ## Features
 
 - **Laravel 12.x** - The latest version of the most elegant PHP framework
-- **Filament 4.x** - Powerful and flexible admin framework
+- **Filament 5.x** - Powerful and flexible admin framework
 - **Multi-Panel Structure** - Includes three pre-configured panels:
     - Admin Panel (`/admin`) - For system administrators
     - App Panel (`/app`) - For authenticated application users
@@ -31,7 +31,7 @@ web applications with a ready-to-use multi-panel structure.
 
 Clone the repository
 ``` bash
-laravel new my-app --using=jeffersongoncalves/filakitv4 --database=mysql
+laravel new my-app --using=jeffersongoncalves/filakitv5 --database=mysql
 ```
 
 ###  Easy Installation
@@ -83,7 +83,7 @@ php artisan serve
 
 Clone the repository
 ```bash
-laravel new my-app --using=jeffersongoncalves/filakitv4 --database=mysql
+laravel new my-app --using=jeffersongoncalves/filakitv5 --database=mysql
 ```
 
 Move into the project directory
