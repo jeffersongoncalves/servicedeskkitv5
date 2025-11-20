@@ -2,12 +2,6 @@ name: filakitv5
 php: '8.4'
 secured: true
 aliases: {  }
-services:
-    mysql:
-        version: 8.0.36
-        port: '${DB_PORT}'
-    redis:
-        version: 7.0.0
-        port: '${REDIS_PORT}'
+services: {  }
 integrations:
     forge: {  }
