@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.2.0 - 2026-02-04
+
+### What's Changed
+
+* build(deps): bump psy/psysh from 0.12.18 to 0.12.19 by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv5/pull/52
+* build(deps-dev): bump autoprefixer from 10.4.23 to 10.4.24 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv5/pull/53
+* build(deps): bump the actions-deps group with 2 updates by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv5/pull/54
+* build(deps): bump livewire/livewire from 4.1.1 to 4.1.2 in the actions-deps group by @dependabot[bot] in https://github.com/jeffersongoncalves/filakitv5/pull/55
+
+**Full Changelog**: https://github.com/jeffersongoncalves/filakitv5/compare/5.1.3...5.2.0
+
 ## 5.1.3 - 2026-01-30
 
 **Full Changelog**: https://github.com/jeffersongoncalves/filakitv5/compare/5.1.2...5.1.3
