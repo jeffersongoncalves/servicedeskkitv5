@@ -15,6 +15,7 @@ return [
     'guest_panel_enabled' => true,
     'admin_panel_enabled' => true,
     'app_panel_enabled' => true,
+    'agent_panel_enabled' => true,
     'favicon' => [
         'enabled' => true,
         'manifest' => [

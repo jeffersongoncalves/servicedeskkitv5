@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b56f9b8bf868bf68251668aae0e91e29",
+    "content-hash": "d7f6e400cb1eb4afb441b697b7f190f5",
     "packages": [
         {
             "name": "achyutn/filament-log-viewer",
@@ -2218,6 +2218,156 @@
                 "source": "https://github.com/jeffersongoncalves/filament-logo/tree/3.0.0"
             },
             "time": "2025-11-02T21:09:33+00:00"
+        },
+        {
+            "name": "jeffersongoncalves/filament-service-desk",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeffersongoncalves/filament-service-desk.git",
+                "reference": "635240decb93fef0ad3108878e995cb86f636db1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-service-desk/zipball/635240decb93fef0ad3108878e995cb86f636db1",
+                "reference": "635240decb93fef0ad3108878e995cb86f636db1",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "jeffersongoncalves/laravel-service-desk": "^1.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.0|^8.0",
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeffersonGoncalves\\FilamentServiceDesk\\FilamentServiceDeskServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeffersonGoncalves\\FilamentServiceDesk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Goncalves",
+                    "email": "jefferson@example.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Filament plugin for jeffersongoncalves/laravel-service-desk - provides Admin, Agent, and User panels for complete service desk management.",
+            "homepage": "https://github.com/jeffersongoncalves/filament-service-desk",
+            "keywords": [
+                "filament",
+                "helpdesk",
+                "laravel",
+                "service-desk",
+                "support",
+                "tickets"
+            ],
+            "support": {
+                "source": "https://github.com/jeffersongoncalves/filament-service-desk/tree/3.1.1"
+            },
+            "time": "2026-02-08T02:11:01+00:00"
+        },
+        {
+            "name": "jeffersongoncalves/laravel-service-desk",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeffersongoncalves/laravel-service-desk.git",
+                "reference": "c177683fa54d4c10e74b19130755f1eee4f7be8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeffersongoncalves/laravel-service-desk/zipball/c177683fa54d4c10e74b19130755f1eee4f7be8c",
+                "reference": "c177683fa54d4c10e74b19130755f1eee4f7be8c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^11.0|^12.0",
+                "illuminate/database": "^11.0|^12.0",
+                "illuminate/events": "^11.0|^12.0",
+                "illuminate/notifications": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.21",
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0"
+            },
+            "suggest": {
+                "webklex/php-imap": "Required for IMAP email polling (^5.0)"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "ServiceDesk": "JeffersonGoncalves\\ServiceDesk\\Facades\\ServiceDesk"
+                    },
+                    "providers": [
+                        "JeffersonGoncalves\\ServiceDesk\\ServiceDeskServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeffersonGoncalves\\ServiceDesk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Goncalves",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Complete Service Desk package for Laravel with Tickets, SLA, Knowledge Base, and Service Catalog",
+            "homepage": "https://github.com/jeffersongoncalves/laravel-service-desk",
+            "keywords": [
+                "helpdesk",
+                "knowledge-base",
+                "laravel",
+                "service-desk",
+                "sla",
+                "tickets"
+            ],
+            "support": {
+                "source": "https://github.com/jeffersongoncalves/laravel-service-desk/tree/v1.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/jeffersongoncalves",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-02-07T21:08:43+00:00"
         },
         {
             "name": "jenssegers/agent",
@@ -12817,5 +12967,5 @@
         "ext-pcntl": "7.1",
         "ext-posix": "7.1"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

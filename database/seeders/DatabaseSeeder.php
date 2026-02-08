@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\Operator;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,9 +22,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@servicedeskkit.com',
         ]);
 
+        Operator::factory()->create([
+            'name' => 'Test Operator',
+            'email' => 'operator@servicedeskkit.com',
+        ]);
+
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'user@servicedeskkit.com',
         ]);
+
+        $this->call(ServiceDeskSeeder::class);
     }
 }
