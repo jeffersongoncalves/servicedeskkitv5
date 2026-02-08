@@ -18,7 +18,7 @@ return [
     'favicon' => [
         'enabled' => true,
         'manifest' => [
-            'name' => env('APP_NAME', 'Filakit'),
+            'name' => env('APP_NAME', 'ServiceDeskKit'),
             'icons' => [
                 '36' => '0.75',
                 '48' => '1.0',
@@ -28,7 +28,7 @@ return [
                 '192' => '4.0',
             ],
         ],
-        'logo' => 'resources/images/logo-filakit.png',
+        'logo' => 'resources/images/logo-servicedeskkit.png',
         'favicon' => 'resources/favicon/favicon.ico',
     ],
 ];

@@ -15,11 +15,11 @@
 <meta name="msapplication-TileImage" content="{{ Vite::asset('resources/favicon/ms-icon-144x144.png') }}">
 <meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-title" content="{{ config('filakit.favicon.manifest.name') }}"/>
+<meta name="apple-mobile-web-app-title" content="{{ config('servicedeskkit.favicon.manifest.name') }}"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta content="{{ config('filakit.favicon.manifest.name') }}" property="og:site_name"/>
+<meta content="{{ config('servicedeskkit.favicon.manifest.name') }}" property="og:site_name"/>
 <meta property="og:url" content="{{ config('app.url') }}" data-rh="true"/>
 <meta property="og:type" content="website" data-rh="true"/>
-<meta property="og:title" content="{{ config('filakit.favicon.manifest.name') }}" data-rh="true"/>
-<meta property="og:description" content="{{ config('filakit.favicon.manifest.name') }}" data-rh="true"/>
-<meta property="og:image" content="{{ Vite::asset(config('filakit.favicon.logo')) }}" data-rh="true"/>
+<meta property="og:title" content="{{ config('servicedeskkit.favicon.manifest.name') }}" data-rh="true"/>
+<meta property="og:description" content="{{ config('servicedeskkit.favicon.manifest.name') }}" data-rh="true"/>
+<meta property="og:image" content="{{ Vite::asset(config('servicedeskkit.favicon.logo')) }}" data-rh="true"/>

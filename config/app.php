@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Filakit'),
+    'name' => env('APP_NAME', 'ServiceDeskKit'),
 
     /*
     |--------------------------------------------------------------------------

@@ -1,14 +1,14 @@
 <div class="filament-hidden">
 
-![FilaKit](https://raw.githubusercontent.com/jeffersongoncalves/filakitv5/main/art/jeffersongoncalves-filakitv5.png)
+![ServiceDeskKit](https://raw.githubusercontent.com/jeffersongoncalves/servicedeskkitv5/main/art/jeffersongoncalves-servicedeskkitv5.png)
 
 </div>
 
-# FilaKit Start Kit Filament 5.x and Laravel 12.x
+# ServiceDeskKit Start Kit Filament 5.x and Laravel 12.x
 
-## About FilaKit
+## About ServiceDeskKit
 
-FilaKit is a robust starter kit built on Laravel 12.x and Filament 5.x, designed to accelerate the development of modern
+ServiceDeskKit is a robust starter kit built on Laravel 12.x and Filament 5.x, designed to accelerate the development of modern
 web applications with a ready-to-use multi-panel structure.
 
 ## Features
@@ -19,7 +19,7 @@ web applications with a ready-to-use multi-panel structure.
     - Admin Panel (`/admin`) - For system administrators
     - App Panel (`/app`) - For authenticated application users
     - Public Panel (frontend interface) - For visitors
-- **Environment Configuration** - Centralized configuration through the `config/filakit.php` file
+- **Environment Configuration** - Centralized configuration through the `config/servicedeskkit.php` file
 
 ## System Requirements
 
@@ -31,12 +31,12 @@ web applications with a ready-to-use multi-panel structure.
 
 Clone the repository
 ``` bash
-laravel new my-app --using=jeffersongoncalves/filakitv5 --database=mysql
+laravel new my-app --using=jeffersongoncalves/servicedeskkitv5 --database=mysql
 ```
 
 ###  Easy Installation
 
-FilaKit can be easily installed using the following command:
+ServiceDeskKit can be easily installed using the following command:
 
 ```bash
 php install.php
@@ -83,7 +83,7 @@ php artisan serve
 
 Clone the repository
 ```bash
-laravel new my-app --using=jeffersongoncalves/filakitv5 --database=mysql
+laravel new my-app --using=jeffersongoncalves/servicedeskkitv5 --database=mysql
 ```
 
 Move into the project directory
@@ -121,7 +121,7 @@ Start the Sail containers
 ```bash
 ./vendor/bin/sail up -d
 ```
-You won’t need to run `php artisan serve`, as Laravel Sail automatically handles the development server within the container.
+You won't need to run `php artisan serve`, as Laravel Sail automatically handles the development server within the container.
 
 Attach to the application container
 ```bash
@@ -140,7 +140,7 @@ pnpm install
 
 ## Authentication Structure
 
-FilaKit comes pre-configured with a custom authentication system that supports different types of users:
+ServiceDeskKit comes pre-configured with a custom authentication system that supports different types of users:
 
 - `Admin` - For administrative panel access
 - `User` - For application panel access
@@ -167,16 +167,16 @@ Panels can be customized through their respective providers:
 - `app/Providers/Filament/AppPanelProvider.php`
 - `app/Providers/Filament/PublicPanelProvider.php`
 
-Alternatively, these settings are also consolidated in the `config/filakit.php` file for easier management.
+Alternatively, these settings are also consolidated in the `config/servicedeskkit.php` file for easier management.
 
 ### Themes and Colors
 
 Each panel can have its own color scheme, which can be easily modified in the corresponding Provider files or in the
-`filakit.php` configuration file.
+`servicedeskkit.php` configuration file.
 
 ### Configuration File
 
-The `config/filakit.php` file centralizes the configuration of the starter kit, including:
+The `config/servicedeskkit.php` file centralizes the configuration of the starter kit, including:
 
 - Panel routes
 - Middleware for each panel
@@ -212,7 +212,7 @@ Where to configure
   - visibility: file visibility (default: public)
 
 Migrations and models
-- The required columns are already included in this kit’s default migrations (users and admins): avatar_url, locale and theme_color, using the names defined in config/filament-edit-profile.php.
+- The required columns are already included in this kit's default migrations (users and admins): avatar_url, locale and theme_color, using the names defined in config/filament-edit-profile.php.
 - The App\Models\User and App\Models\Admin models already read the avatar using the plugin configuration (getFilamentAvatarUrl).
 
 Avatar storage
@@ -229,7 +229,7 @@ Reference
 
 ## Resources
 
-FilaKit includes support for:
+ServiceDeskKit includes support for:
 
 - User and admin management
 - Multi-guard authentication system

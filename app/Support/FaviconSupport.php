@@ -11,13 +11,13 @@ abstract class FaviconSupport
 {
     public static function routes(): void
     {
-        if (config('filakit.favicon.enabled', false)) {
+        if (config('servicedeskkit.favicon.enabled', false)) {
             Route::any('manifest.json', fn () => self::getManifestJson());
             Route::any('browserconfig.xml', fn () => self::getBrowserConfigXml());
-            if (! empty(config('filakit.favicon.logo'))) {
+            if (! empty(config('servicedeskkit.favicon.logo'))) {
                 Route::any('logo.png', fn () => self::getLogo());
             }
-            if (! empty(config('filakit.favicon.favicon'))) {
+            if (! empty(config('servicedeskkit.favicon.favicon'))) {
                 Route::any('favicon.ico', fn () => self::getFavicon());
             }
         }
@@ -25,7 +25,7 @@ abstract class FaviconSupport
 
     private static function getManifestJson(): JsonResponse
     {
-        $manifest = config('filakit.favicon.manifest');
+        $manifest = config('servicedeskkit.favicon.manifest');
         $manifest['icons'] = self::parseIcons($manifest['icons'] ?? []);
 
         return response()->json($manifest);
@@ -73,11 +73,11 @@ abstract class FaviconSupport
 
     private static function getLogo(): Response
     {
-        return response(Vite::content(config('filakit.logo')), 200, ['Content-Type' => 'image/png']);
+        return response(Vite::content(config('servicedeskkit.logo')), 200, ['Content-Type' => 'image/png']);
     }
 
     private static function getFavicon(): Response
     {
-        return response(Vite::content(config('filakit.favicon')), 200, ['Content-Type' => 'image/x-icon']);
+        return response(Vite::content(config('servicedeskkit.favicon')), 200, ['Content-Type' => 'image/x-icon']);
     }
 }
