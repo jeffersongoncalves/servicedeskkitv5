@@ -15,10 +15,11 @@ web applications with a ready-to-use multi-panel structure.
 
 - **Laravel 12.x** - The latest version of the most elegant PHP framework
 - **Filament 5.x** - Powerful and flexible admin framework
-- **Multi-Panel Structure** - Includes three pre-configured panels:
+- **Multi-Panel Structure** - Includes four pre-configured panels:
     - Admin Panel (`/admin`) - For system administrators
+    - Agent Panel (`/agent`) - For support operators/agents
     - App Panel (`/app`) - For authenticated application users
-    - Public Panel (frontend interface) - For visitors
+    - Guest Panel (`/`) - Public frontend interface for visitors
 - **Environment Configuration** - Centralized configuration through the `config/servicedeskkit.php` file
 
 ## System Requirements
@@ -142,8 +143,17 @@ pnpm install
 
 ServiceDeskKit comes pre-configured with a custom authentication system that supports different types of users:
 
-- `Admin` - For administrative panel access
-- `User` - For application panel access
+- `Admin` - For administrative panel access (`/admin`)
+- `Operator` - For agent/support panel access (`/agent`)
+- `User` - For application panel access (`/app`)
+
+Each user type has its own database table, model, guard, and authentication flow. Default test credentials (after seeding):
+
+| User Type | Email | Password |
+|-----------|-------|----------|
+| Admin | admin@servicedeskkit.com | password |
+| Operator | operator@servicedeskkit.com | password |
+| User | user@servicedeskkit.com | password |
 
 ## Development
 
@@ -164,8 +174,9 @@ pnpm run dev
 Panels can be customized through their respective providers:
 
 - `app/Providers/Filament/AdminPanelProvider.php`
+- `app/Providers/Filament/AgentPanelProvider.php`
 - `app/Providers/Filament/AppPanelProvider.php`
-- `app/Providers/Filament/PublicPanelProvider.php`
+- `app/Providers/Filament/GuestPanelProvider.php`
 
 Alternatively, these settings are also consolidated in the `config/servicedeskkit.php` file for easier management.
 
@@ -227,12 +238,101 @@ Quick access
 Reference
 - Plugin repository: https://github.com/joaopaulolndev/filament-edit-profile
 
+## Service Desk Plugin — filament-service-desk
+
+ServiceDeskKit comes with the [filament-service-desk](https://github.com/jeffersongoncalves/filament-service-desk) plugin pre-installed, providing a complete helpdesk and support ticket system fully integrated into the Filament panels.
+
+### Features
+
+- **Ticket Management** — Create, assign, track, and resolve support tickets with comments, attachments, and full history
+- **SLA Policies** — Define response and resolution time targets with automatic breach detection and escalation rules
+- **Knowledge Base** — Publish articles organized by categories with versioning, feedback, and view tracking
+- **Service Catalog** — Offer a catalog of services with custom form fields and approval workflows
+- **Departments & Categories** — Organize tickets by department and category for better routing
+- **Canned Responses** — Pre-defined response templates for common questions
+- **Business Hours** — Configure work schedules that SLA calculations respect
+- **Email Channels** — Receive tickets via email with support for IMAP, Mailgun, SendGrid, Resend, and Postmark
+- **Tags** — Flexible tagging system for tickets
+
+### Panel Integration
+
+The plugin provides three specialized plugin classes, each designed for a specific panel:
+
+| Panel | Plugin Class | Features |
+|-------|-------------|----------|
+| Admin (`/admin`) | `ServiceDeskPlugin` | Full management: tickets, departments, categories, tags, SLA, knowledge base, service catalog, email channels, canned responses, business hours, escalation rules |
+| Agent (`/agent`) | `ServiceDeskAgentPlugin` | Ticket handling: view assigned tickets, respond, use canned responses, manage SLA |
+| App (`/app`) | `ServiceDeskUserPlugin` | User portal: create tickets, view own tickets, browse knowledge base, request services from catalog |
+
+### Configuration Files
+
+- **`config/filament-service-desk.php`** — Filament plugin settings (navigation, features toggle, resource/widget overrides)
+- **`config/service-desk.php`** — Core settings (models, ticket options, SLA, knowledge base, service catalog, email, notifications)
+
+### Key Settings in `config/service-desk.php`
+
+```php
+'models' => [
+    'user' => \App\Models\User::class,      // Model that creates tickets
+    'operator' => \App\Models\Operator::class, // Model that handles tickets
+],
+
+'ticket' => [
+    'reference_prefix' => 'SD',       // Ticket reference prefix (e.g., SD-00001)
+    'default_priority' => 'medium',    // Default priority for new tickets
+    'max_file_size' => 10240,          // Max attachment size in KB
+],
+
+'sla' => [
+    'enabled' => true,
+    'auto_apply' => true,              // Automatically apply SLA policies
+    'near_breach_minutes' => 30,       // Warning before SLA breach
+],
+```
+
+### Required Model Traits
+
+The following traits must be added to your models (already configured in this kit):
+
+- **`App\Models\User`** — Uses `JeffersonGoncalves\ServiceDesk\Concerns\HasTickets` (allows users to create and manage their tickets)
+- **`App\Models\Operator`** — Uses `JeffersonGoncalves\ServiceDesk\Concerns\IsOperator` (enables operator functionality: ticket assignment, department membership, etc.)
+
+### Customization
+
+You can override any resource or widget by specifying your custom class in `config/filament-service-desk.php`:
+
+```php
+'resources' => [
+    'admin' => [
+        'ticket' => \App\Filament\Admin\Resources\CustomTicketResource::class,
+        // ...
+    ],
+],
+```
+
+Toggle features per-panel using fluent methods on the plugin:
+
+```php
+ServiceDeskPlugin::make()
+    ->knowledgeBase(true)
+    ->sla(true)
+    ->emailChannels(true)
+    ->serviceCatalog(true)
+    ->navigationGroup('Service Desk'),
+```
+
+### Reference
+
+- Plugin repository: https://github.com/jeffersongoncalves/filament-service-desk
+- Core package: https://github.com/jeffersongoncalves/laravel-service-desk
+
 ## Resources
 
 ServiceDeskKit includes support for:
 
-- User and admin management
-- Multi-guard authentication system
+- User, operator, and admin management
+- Multi-guard authentication system (admin, operator, web)
+- Integrated helpdesk with tickets, SLA, knowledge base, and service catalog
 - Tailwind CSS integration
 - Database queue configuration
 - Customizable panel routing and branding
