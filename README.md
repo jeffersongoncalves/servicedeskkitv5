@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![ServiceDeskKit](https://raw.githubusercontent.com/jeffersongoncalves/servicedeskkitv5/main/art/jeffersongoncalves-servicedeskkitv5.png)
+![ServiceDeskKit v5](https://raw.githubusercontent.com/jeffersongoncalves/servicedeskkitv5/main/art/jeffersongoncalves-servicedeskkitv5.png)
 
 </div>
 
