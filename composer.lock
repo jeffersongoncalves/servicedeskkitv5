@@ -2226,20 +2226,20 @@
         },
         {
             "name": "jeffersongoncalves/filament-logo",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffersongoncalves/filament-logo.git",
-                "reference": "004636cac18fab595f5b76cf18d1676b3cb45ff0"
+                "reference": "72f7e86e9e4fec8b98b132db669563fc71b9ab5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-logo/zipball/004636cac18fab595f5b76cf18d1676b3cb45ff0",
-                "reference": "004636cac18fab595f5b76cf18d1676b3cb45ff0",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-logo/zipball/72f7e86e9e4fec8b98b132db669563fc71b9ab5d",
+                "reference": "72f7e86e9e4fec8b98b132db669563fc71b9ab5d",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^5.0",
+                "filament/filament": "^5.3",
                 "php": "^8.2|^8.3",
                 "spatie/laravel-package-tools": "^1.14.0"
             },
@@ -2281,26 +2281,33 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/jeffersongoncalves/filament-logo/tree/3.0.1"
+                "issues": "https://github.com/jeffersongoncalves/filament-logo/issues",
+                "source": "https://github.com/jeffersongoncalves/filament-logo/tree/3.0.2"
             },
-            "time": "2026-02-24T17:35:35+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/jeffersongoncalves",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-04T03:15:23+00:00"
         },
         {
             "name": "jeffersongoncalves/filament-service-desk",
-            "version": "3.1.2",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffersongoncalves/filament-service-desk.git",
-                "reference": "ec9f77dc7b759c2e65210615b7cfa19ce953d787"
+                "reference": "600654774482bc495c10b32c98ef73349568fd40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffersongoncalves/filament-service-desk/zipball/ec9f77dc7b759c2e65210615b7cfa19ce953d787",
-                "reference": "ec9f77dc7b759c2e65210615b7cfa19ce953d787",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-service-desk/zipball/600654774482bc495c10b32c98ef73349568fd40",
+                "reference": "600654774482bc495c10b32c98ef73349568fd40",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^5.0",
+                "filament/filament": "^5.3",
                 "jeffersongoncalves/laravel-service-desk": "^1.0",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.14.0"
@@ -2351,9 +2358,16 @@
                 "tickets"
             ],
             "support": {
-                "source": "https://github.com/jeffersongoncalves/filament-service-desk/tree/3.1.2"
+                "issues": "https://github.com/jeffersongoncalves/filament-service-desk/issues",
+                "source": "https://github.com/jeffersongoncalves/filament-service-desk/tree/3.1.4"
             },
-            "time": "2026-02-24T15:29:51+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/jeffersongoncalves",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-04T03:20:38+00:00"
         },
         {
             "name": "jeffersongoncalves/laravel-service-desk",
@@ -2520,20 +2534,20 @@
         },
         {
             "name": "joaopaulolndev/filament-edit-profile",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joaopaulolndev/filament-edit-profile.git",
-                "reference": "4afc54be49d6a05fffd4e70e85f4758959514314"
+                "reference": "88f2a7e9b5cc3ac4279ded6bcbe70c2fd9a965e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joaopaulolndev/filament-edit-profile/zipball/4afc54be49d6a05fffd4e70e85f4758959514314",
-                "reference": "4afc54be49d6a05fffd4e70e85f4758959514314",
+                "url": "https://api.github.com/repos/joaopaulolndev/filament-edit-profile/zipball/88f2a7e9b5cc3ac4279ded6bcbe70c2fd9a965e7",
+                "reference": "88f2a7e9b5cc3ac4279ded6bcbe70c2fd9a965e7",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^5.0",
+                "filament/filament": "^5.3",
                 "jenssegers/agent": "^2.6",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.15.0"
@@ -2590,7 +2604,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-27T23:01:06+00:00"
+            "time": "2026-03-04T02:40:49+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
