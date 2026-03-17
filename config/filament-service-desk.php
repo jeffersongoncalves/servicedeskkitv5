@@ -1,5 +1,20 @@
 <?php
 
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\BusinessHoursSchedules\BusinessHoursScheduleResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\CannedResponses\CannedResponseResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Categories\CategoryResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Departments\DepartmentResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\EmailChannels\EmailChannelResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\EscalationRules\EscalationRuleResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\KbArticles\KbArticleResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\KbCategories\KbCategoryResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\ServiceCategories\ServiceCategoryResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Services\ServiceResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\SlaPolicies\SlaPolicyResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Tags\TagResource;
+use JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Tickets\TicketResource;
+use JeffersonGoncalves\FilamentServiceDesk\User\Resources\ServiceRequests\ServiceRequestResource;
+
 return [
 
     /*
@@ -55,27 +70,27 @@ return [
 
     'resources' => [
         'admin' => [
-            'department' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Departments\DepartmentResource::class,
-            'category' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Categories\CategoryResource::class,
-            'tag' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Tags\TagResource::class,
-            'canned_response' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\CannedResponses\CannedResponseResource::class,
-            'ticket' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Tickets\TicketResource::class,
-            'sla_policy' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\SlaPolicies\SlaPolicyResource::class,
-            'escalation_rule' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\EscalationRules\EscalationRuleResource::class,
-            'business_hours_schedule' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\BusinessHoursSchedules\BusinessHoursScheduleResource::class,
-            'email_channel' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\EmailChannels\EmailChannelResource::class,
-            'kb_article' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\KbArticles\KbArticleResource::class,
-            'kb_category' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\KbCategories\KbCategoryResource::class,
-            'service' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\Services\ServiceResource::class,
-            'service_category' => \JeffersonGoncalves\FilamentServiceDesk\Admin\Resources\ServiceCategories\ServiceCategoryResource::class,
+            'department' => DepartmentResource::class,
+            'category' => CategoryResource::class,
+            'tag' => TagResource::class,
+            'canned_response' => CannedResponseResource::class,
+            'ticket' => TicketResource::class,
+            'sla_policy' => SlaPolicyResource::class,
+            'escalation_rule' => EscalationRuleResource::class,
+            'business_hours_schedule' => BusinessHoursScheduleResource::class,
+            'email_channel' => EmailChannelResource::class,
+            'kb_article' => KbArticleResource::class,
+            'kb_category' => KbCategoryResource::class,
+            'service' => ServiceResource::class,
+            'service_category' => ServiceCategoryResource::class,
         ],
         'agent' => [
-            'ticket' => \JeffersonGoncalves\FilamentServiceDesk\Agent\Resources\Tickets\TicketResource::class,
-            'canned_response' => \JeffersonGoncalves\FilamentServiceDesk\Agent\Resources\CannedResponses\CannedResponseResource::class,
+            'ticket' => JeffersonGoncalves\FilamentServiceDesk\Agent\Resources\Tickets\TicketResource::class,
+            'canned_response' => JeffersonGoncalves\FilamentServiceDesk\Agent\Resources\CannedResponses\CannedResponseResource::class,
         ],
         'user' => [
-            'ticket' => \JeffersonGoncalves\FilamentServiceDesk\User\Resources\Tickets\TicketResource::class,
-            'service_request' => \JeffersonGoncalves\FilamentServiceDesk\User\Resources\ServiceRequests\ServiceRequestResource::class,
+            'ticket' => JeffersonGoncalves\FilamentServiceDesk\User\Resources\Tickets\TicketResource::class,
+            'service_request' => ServiceRequestResource::class,
         ],
     ],
 
