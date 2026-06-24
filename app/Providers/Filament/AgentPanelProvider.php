@@ -21,6 +21,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use JeffersonGoncalves\Filament\Pwa\FilamentPwaPlugin;
 use JeffersonGoncalves\FilamentServiceDesk\ServiceDeskAgentPlugin;
 use Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin;
 use Joaopaulolndev\FilamentEditProfile\Pages\EditProfilePage;
@@ -37,7 +38,7 @@ class AgentPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Blue,
             ])
-            ->brandLogo(fn () => Vite::asset(config('servicedeskkit.favicon.logo')))
+            ->brandLogo(fn () => Vite::asset(config('servicedeskkit.logo')))
             ->brandLogoHeight(fn () => request()->is('agent/login', 'agent/password-reset/*') ? '121px' : '50px')
             ->viteTheme('resources/css/filament/agent/theme.css')
             ->defaultThemeMode(config('servicedeskkit.theme_mode', ThemeMode::Dark))
@@ -67,6 +68,7 @@ class AgentPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
+                FilamentPwaPlugin::make(),
                 ServiceDeskAgentPlugin::make()
                     ->knowledgeBase(true)
                     ->sla(true)
