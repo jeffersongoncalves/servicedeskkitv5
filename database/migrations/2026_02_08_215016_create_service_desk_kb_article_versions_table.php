@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('change_notes')->nullable();
             $table->timestamp('created_at');
 
-            $table->unique(['article_id', 'version_number']);
+            $table->unique(['article_id', 'version_number'], 'sd_kb_article_versions_unique');
         });
     }
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
 
-            $table->unique(['article_id', 'related_article_id']);
+            $table->unique(['article_id', 'related_article_id'], 'sd_kb_article_relations_unique');
         });
     }
 

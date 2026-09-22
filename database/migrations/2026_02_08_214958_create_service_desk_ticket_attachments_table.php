@@ -23,7 +23,7 @@ return new class extends Migration
             $table->json('metadata')->nullable();
             $table->timestamps();
 
-            $table->index(['uploaded_by_type', 'uploaded_by_id']);
+            $table->index(['uploaded_by_type', 'uploaded_by_id'], 'sd_attachments_uploaded_by_index');
         });
     }
 

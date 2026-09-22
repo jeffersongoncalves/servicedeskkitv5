@@ -16,7 +16,7 @@ return new class extends Migration
             $table->time('end_time');
             $table->timestamps();
 
-            $table->index(['schedule_id', 'day_of_week']);
+            $table->index(['schedule_id', 'day_of_week'], 'sd_business_hours_slots_schedule_day_index');
         });
     }
 

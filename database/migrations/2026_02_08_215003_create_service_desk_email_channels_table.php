@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('driver', 32);
             $table->string('email_address')->unique();
-            $table->json('settings');
+            $table->text('settings');
             $table->boolean('is_active')->default(true)->index();
             $table->timestamp('last_polled_at')->nullable();
             $table->text('last_error')->nullable();

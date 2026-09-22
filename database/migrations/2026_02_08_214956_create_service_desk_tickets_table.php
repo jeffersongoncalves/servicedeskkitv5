@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('service_desk_tickets', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->string('reference_number', 32)->unique();
+            $table->string('reference_number', 32)->nullable()->unique();
             $table->foreignId('department_id')->constrained('service_desk_departments')->restrictOnDelete();
             $table->foreignId('category_id')->nullable()->constrained('service_desk_categories')->nullOnDelete();
             $table->string('user_type');
