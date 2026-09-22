@@ -48,14 +48,6 @@ return [
         ],
     ],
 
-    // Path (resolvable by Vite) to the favicon.ico served at /favicon.ico.
-    // Leave empty/null to skip registering the /favicon.ico route.
-    'favicon' => 'resources/favicon/favicon.ico',
-
-    // Colour of the legacy Windows pinned tile (msapplication-TileColor meta +
-    // the browserconfig.xml <TileColor>).
-    'tile_color' => '#ffffff',
-
     // iOS status-bar style for the standalone "Add to Home Screen" app.
     // `black-translucent` lets the page paint behind the status bar so a dark
     // theme bg covers it; `default`/`black` leave an opaque strip.
