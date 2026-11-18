@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f3a57678329575e65434f7c0d507d84",
+    "content-hash": "11f74a35af2fc1952a498f41c943cb1a",
     "packages": [
         {
             "name": "achyutn/filament-log-viewer",
@@ -12774,7 +12774,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-03T12:14:22+00:00"
+            "time": "2026-11-03T12:14:22+00:00",
+            "published-time": "2026-11-03T12:14:36+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
